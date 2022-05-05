@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="" />
+<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css" media="all">
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="all"/>
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet">
+</head>
+<body>
+<div class="signupform">
+<h1>Interior Register Form</h1>
+	<div class="container">
+		
+		<div class="agile_info">
+			<div class="w3l_form">
+				<div class="left_grid_info">
+					<h3>Congratulation ！</h3>
+					<h4>Thank you for using our system</h4>
+
+				</div>
+			</div>
+			<div class="w3_info">
+				<h2>Sign up Successfully !</h2>
+				<p>If you want to login, please click the button below.</p>
+				<div class="alert-info">
+					<p>Your Account Number is</p>
+					<td style="color: greenyellow" th:text="${Id}"></td>
+					<p>Please remember it.Otherwise you can only contact with the administrator to have the account back.</p>
+				</div>
+				<a th:href="@{/index}">
+					<button>Index</button>
+				</a>
+			</div>
+			<div class="clear"></div>
+			</div>
+			
+		</div>
+		<div class="footer">
+
+			<div align="center" style="color: black">&copy;2021 Copyright by Jacen.Contact me<a href="mailto:jacenwang0610@gmail.com" target="_blank" title="Gmail" >联系我</a> - School of Automation<a  href="https://automation.seu.edu.cn/" target="_blank" title="东南大学自动化" >东南大学自动化</a> -  Southeast University  <a href="http://seu.edu.cn/" title="东南大学" target="_blank">东南大学</a>  </div>
+ </div>
+	</div>
+
+
+</body>
+</html>

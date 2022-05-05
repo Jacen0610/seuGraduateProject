@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.JoinMapper">
+
+    <select id="getJoinList" resultType="com.example.demo.pojo.Join">
+        select * from database1.join
+    </select>
+
+    <select id="getJoinListByInfoNo" resultType="com.example.demo.pojo.Join">
+        select * from database1.join where infoNo = #{infoNo}
+    </select>
+
+    <select id="getTheHighestScore" resultType="com.example.demo.pojo.Join">
+        select * from database1.join
+        where  score = (select max(score) from database1.join where infoNo = #{infoNo});
+    </select>
+
+    <select id="getJoinListByJid" resultType="com.example.demo.pojo.Join">
+        select * from database1.join where jid = #{jid}
+    </select>
+
+    <insert id="joinInsert" parameterType="map">
+        insert into database1.join(infoNo,account,userInc,userBid,userWin,offerPrice)
+        values (#{infoNo},#{account},#{userInc},#{userBid},#{userWin},#{offerPrice});
+    </insert>
+
+    <update id="updateJoin" parameterType="map">
+        update database1.join set
+        <foreach collection="_parameter" item="val" index="key" separator=",">
+            ${key} =  #{val}
+        </foreach>
+        where jid = #{jid}
+
+    </update>
+</mapper>

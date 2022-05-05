@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="" />
+<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css" media="all">
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="all"/>
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet">
+</head>
+<body>
+<div class="signupform">
+<h1>Interior Register Form</h1>
+	<div class="container">
+		
+		<div class="agile_info">
+			<div class="w3l_form">
+				<div class="left_grid_info">
+					<h3>Welcome !</h3>
+					<h4>This is the registration page of the bidding system</h4>
+					<p> If you want to use our system, you must have an account first. Fill in your personal information and register. We hope you have a wonderful day.</p>
+
+				</div>
+			</div>
+			<div class="w3_info">
+				<h2>Create An Account</h2>
+				<p>Please fill in your personal information carefully. If the administrator finds malicious information, your account is likely to be frozen.</p>
+						<form th:action="@{/sendRegister}" method="post">
+						<div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" placeholder="User Name" required="" name="userNickname">
+						</div>
+						<div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" placeholder="Company" required="" name="company">
+						</div>
+						<div class="input-group">
+							<span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+							<input type="email" placeholder="Email" required="" name="emailAddr">
+						</div>
+						<div class="input-group">
+							<span><i class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="Password" placeholder="Password" required="" name="pwd">
+						</div>
+						<!-- Confirm密码
+						<div class="input-group">
+							<span><i class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="Password" placeholder="Confirm Password" required="">
+						</div>
+						 -->
+							<input type="checkbox" value="remember-me" /> <h4>Send me latest updates </h4>        
+							<button class="btn btn-danger btn-block" type="submit">Create Account</button >                
+					</form>
+			</div>
+			<div class="clear"></div>
+			</div>
+			
+		</div>
+		<div class="footer">
+
+			<div align="center" style="color: black">&copy;2021 Copyright by Jacen.Contact me<a href="mailto:jacenwang0610@gmail.com" target="_blank" title="Gmail" >联系我</a> - School of Automation<a  href="https://automation.seu.edu.cn/" target="_blank" title="东南大学自动化" >东南大学自动化</a> -  Southeast University  <a href="http://seu.edu.cn/" title="东南大学" target="_blank">东南大学</a>  </div>
+ </div>
+	</div>
+
+
+</body>
+</html>

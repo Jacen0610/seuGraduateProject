@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.InfoMapper">
+    <select id="getInfoList" resultType="info">
+        select * from database1.Info
+    </select>
+
+    <select id="getInfoListIf" parameterType="map" resultType="info">
+        select * from database1.info
+        <where>
+        <if test="name != null">
+            and name = #{name}
+        </if>
+        <if test="information != null">
+            and information = #{information}
+        </if>
+        <if test="status != null">
+            and status = #{status}
+        </if>
+        </where>
+    </select>
+
+    <select id="getInfoById" parameterType="Integer" resultType="com.example.demo.pojo.Info">
+        select * from database1.info where infoid=#{infoid}
+    </select>
+
+    <insert id="addInfo" parameterType="map" >
+        insert into database1.Info( name, information, price, contact,infoCompany)
+        values (#{name},#{information}, #{price},#{contact},#{infoCompany});
+    </insert>
+
+
+    <update id="updateInfo" parameterType="map">
+        update database1.info set
+        <foreach collection="_parameter" item="val" index="key" separator=",">
+            ${key} =  #{val}
+        </foreach>
+        where infoid = #{infoid}
+
+    </update>
+</mapper>
